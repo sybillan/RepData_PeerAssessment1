@@ -1,7 +1,10 @@
 ---
 title: "Reproducible Research Assignment I - Fitbit Analysis"
-output: html_document
+output: 
+ md_document:
+ variant: markdown_github
 ---
+
 
 #Context of Study
 This assignment uses data from a personal activity monitoring device. The device collects data at 5 minute intervals through out the day and  spans across two months of data from an anonymous individual collected during  months of October and November, 2012. The number of steps taken in 5 minute intervals are recorded each day.
@@ -32,7 +35,7 @@ summary(tabular)
 
 ```{r}
 tabular1<-aggregate(steps~ date,tabular,sum)
-hist(tabular1$steps, xlab="Steps", main="Histogram -Total Steps Per Day")
+hist(tabular1$steps, xlab="Steps", main="Histogram -Total Steps Per Day", breaks=30, col="blue")
 ```
 
 # 2. Mean and Median of Initial Dataset
@@ -80,7 +83,7 @@ tabular_aggr<-aggregate(steps~ date,tabular_new,sum)
 # 6. Histogram of the total number of steps taken each day (with filled in NA's)
 
 ```{r}
-hist(tabular_aggr$steps, xlab="Steps", main="Histogram -Total Steps Per Day")
+hist(tabular_aggr$steps, xlab="Steps", main="Histogram -Total Steps Per Day", breaks=30,col="blue")
 ```
 
 #7. Mean and Median for filled in dataset
